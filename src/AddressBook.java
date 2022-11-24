@@ -52,8 +52,13 @@ public class AddressBook {
         System.out.println(contactList.get(name));
     }
 
+    public void deleteContact(String name) {
+        System.out.println("Deleted : " + contactList.remove(name));
+    }
+
     @Override
     public String toString() {
         return " contactList = \n" + contactList;
     }
+
 }
