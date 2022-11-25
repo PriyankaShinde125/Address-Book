@@ -2,12 +2,20 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class AddressBook {
-    HashMap<String, Contact> contactMap = new HashMap<>();
+    String addressBookName;
+    HashMap<String, Contact> contactMap;
 
     public AddressBook() {
+        contactMap = new HashMap<>();
+    }
+
+    public AddressBook(String addressBookName) {
+        this.addressBookName = addressBookName;
+        contactMap = new HashMap<>();
     }
 
     public AddressBook(HashMap<String, Contact> contactMap) {
+        this.contactMap = new HashMap<>();
         this.contactMap = contactMap;
     }
 
@@ -17,6 +25,14 @@ public class AddressBook {
 
     public void setContactMap(HashMap<String, Contact> contactMap) {
         this.contactMap = contactMap;
+    }
+
+    public String getAddressBookName() {
+        return addressBookName;
+    }
+
+    public void setAddressBookName(String addressBookName) {
+        this.addressBookName = addressBookName;
     }
 
     public void createNewContact() {
