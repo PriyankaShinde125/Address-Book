@@ -2,21 +2,21 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class AddressBook {
-    HashMap<String, Contact> contactList = new HashMap<>();
+    HashMap<String, Contact> contactMap = new HashMap<>();
 
     public AddressBook() {
     }
 
-    public AddressBook(HashMap<String, Contact> contactList) {
-        this.contactList = contactList;
+    public AddressBook(HashMap<String, Contact> contactMap) {
+        this.contactMap = contactMap;
     }
 
-    public HashMap<String, Contact> getContactList() {
-        return contactList;
+    public HashMap<String, Contact> getContactMap() {
+        return contactMap;
     }
 
-    public void setContactList(HashMap<String, Contact> contactList) {
-        this.contactList = contactList;
+    public void setContactMap(HashMap<String, Contact> contactMap) {
+        this.contactMap = contactMap;
     }
 
     public void createNewContact() {
@@ -40,25 +40,25 @@ public class AddressBook {
         int zip = sc.nextInt();
         Address address = new Address(area, city, state, zip);
         Contact contact = new Contact(firstName, lastName, Long.parseLong(phoneNo), emailId, address);
-        contactList.put(contact.getFirstName() + contact.getLastName(), contact);
-        System.out.println(contactList);
+        contactMap.put(contact.getFirstName() + contact.getLastName(), contact);
+        System.out.println(contactMap.get(contact.getFirstName() + contact.getLastName()));
     }
 
     public void editContact(String name) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter new phone no = ");
         String phoneNo = sc.next();
-        contactList.get(name).setPhoneNumber(Long.parseLong(phoneNo));
-        System.out.println(contactList.get(name));
+        contactMap.get(name).setPhoneNumber(Long.parseLong(phoneNo));
+        System.out.println(contactMap.get(name));
     }
 
     public void deleteContact(String name) {
-        System.out.println("Deleted : " + contactList.remove(name));
+        System.out.println("Deleted : " + contactMap.remove(name));
     }
 
     @Override
     public String toString() {
-        return " contactList = \n" + contactList;
+        return " contactList = \n" + contactMap;
     }
 
 }

@@ -21,7 +21,11 @@ public class AddressBookMain {
             int choice = sc.nextInt();
             switch (choice) {
                 case CREATE_CONTACT:
-                    addressBook.createNewContact();
+                    System.out.println("Enter how many contacts do you want to add : ");
+                    int noOfContacts = sc.nextInt();
+                    for (int i = 0; i < noOfContacts; i++) {
+                        addressBook.createNewContact();
+                    }
                     break;
                 case EDIT_CONTACT:
                     System.out.println("Enter firstname and last name to edit contact : ");
