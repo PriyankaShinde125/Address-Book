@@ -13,8 +13,7 @@ public class AddressBookOperations {
 
     void generateMenuToOperateAddressBook(AddressBook addressBook) {
         Scanner sc = new Scanner(System.in);
-        String firstName;
-        String lastName;
+        String emailId;
         while (true) {
             System.out.println("Enter your choice : ");
             System.out.println("1 : Create new contact ");
@@ -33,19 +32,17 @@ public class AddressBookOperations {
                     }
                     break;
                 case EDIT_CONTACT:
-                    System.out.println("Enter firstname and last name to edit contact : ");
-                    firstName = sc.next();
-                    lastName = sc.next();
-                    addressBook.editContact(firstName + lastName);
+                    System.out.println("Enter your Email Id to edit contact : ");
+                    emailId = sc.next();
+                    addressBook.editContact(emailId);
                     break;
                 case DELETE_CONTACT:
-                    System.out.println("Enter firstname and last name to edit contact : ");
-                    firstName = sc.next();
-                    lastName = sc.next();
-                    addressBook.deleteContact(firstName + lastName);
+                    System.out.println("Enter Email Id to edit contact : ");
+                    emailId = sc.next();
+                    addressBook.deleteContact(emailId);
                     break;
                 case CHANGE_ADDRESS_BOOK:
-                    selectAddressBook();
+                    addressBook = selectAddressBook();
                     break;
                 case PRINT_CONTACTS:
                     System.out.println(addressBook);
